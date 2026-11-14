@@ -8,6 +8,99 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section class="cake-intro" id="cakeIntro" role="dialog" aria-modal="true" aria-labelledby="cakeIntroTitle">
+    <div class="cake-intro-glow" aria-hidden="true"></div>
+    <div class="cake-intro-content">
+      <p class="cake-eyebrow">A MOMENT MADE JUST FOR YOU</p>
+      <h1 id="cakeIntroTitle">A Little Birthday Surprise for You!</h1>
+      <p class="cake-intro-copy">Make a wish, Abi. Your birthday moment starts here.</p>
+
+      <div class="cake-stage" id="cakeStage" aria-label="A chocolate birthday cake with five candles">
+        <div class="cake-halo" aria-hidden="true"></div>
+        <div class="cake-assembly">
+          <div class="chocolate-cake">
+            <svg class="cake-art" viewBox="0 0 360 200" aria-hidden="true">
+              <defs>
+                <linearGradient id="cakeSide" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#32170f"/>
+                  <stop offset=".18" stop-color="#82452c"/>
+                  <stop offset=".48" stop-color="#57291b"/>
+                  <stop offset=".72" stop-color="#85482d"/>
+                  <stop offset="1" stop-color="#32170f"/>
+                </linearGradient>
+                <linearGradient id="cakeTop" x1="0" y1="0" x2=".3" y2="1">
+                  <stop offset="0" stop-color="#b87549"/>
+                  <stop offset=".5" stop-color="#87452c"/>
+                  <stop offset="1" stop-color="#502519"/>
+                </linearGradient>
+                <linearGradient id="cakeCream" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#f0d7a8"/>
+                  <stop offset=".45" stop-color="#c5a06b"/>
+                  <stop offset="1" stop-color="#87603b"/>
+                </linearGradient>
+                <radialGradient id="cakeBerry" cx=".3" cy=".25">
+                  <stop offset="0" stop-color="#ef9a79"/>
+                  <stop offset=".45" stop-color="#c44538"/>
+                  <stop offset="1" stop-color="#71191b"/>
+                </radialGradient>
+                <filter id="cakeShadow" x="-.2" y="-.2" width="1.4" height="1.5">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                  <feOffset dy="4"/>
+                  <feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <g filter="url(#cakeShadow)">
+                <path d="M26 53 C26 34 95 18 180 18 S334 34 334 53 V139 C334 160 265 177 180 177 S26 160 26 139 Z" fill="url(#cakeSide)"/>
+                <path d="M27 89 C78 108 126 111 180 111 S285 108 333 89 V99 C282 119 231 122 180 122 S76 119 27 99 Z" fill="#32180f" opacity=".7"/>
+                <path d="M27 96 C78 115 126 118 180 118 S285 115 333 96" fill="none" stroke="#b1744b" stroke-width="2" opacity=".62"/>
+                <path d="M28 103 C78 122 128 125 180 125 S283 122 332 103 V109 C282 130 231 132 180 132 S77 130 28 109 Z" fill="url(#cakeCream)"/>
+                <path d="M28 109 C78 128 128 131 180 131 S283 128 332 109 V116 C282 137 231 139 180 139 S77 137 28 116 Z" fill="#472116"/>
+                <text x="180" y="160" text-anchor="middle" fill="#f3d9a1" stroke="#472116" stroke-width="1.2" paint-order="stroke" font-family="Georgia, serif" font-size="17" font-weight="700" letter-spacing="4">ABI</text>
+                <path d="M27 53 C27 34 96 18 180 18 S333 34 333 53 C333 73 264 90 180 90 S27 73 27 53 Z" fill="url(#cakeTop)" stroke="#d09a68" stroke-width="2"/>
+                <path d="M48 51 C71 32 121 25 177 25" fill="none" stroke="#f1c18b" stroke-width="3" stroke-linecap="round" opacity=".34"/>
+                <g stroke="#f1d8ae" stroke-width="1.5">
+                  <circle cx="145" cy="50" r="13" fill="url(#cakeBerry)"/>
+                  <circle cx="180" cy="42" r="15" fill="url(#cakeBerry)"/>
+                  <circle cx="215" cy="50" r="13" fill="url(#cakeBerry)"/>
+                </g>
+                <g fill="#647342">
+                  <path d="M136 39 Q132 27 143 34 Q145 26 151 36 L145 42 Z"/>
+                  <path d="M168 29 Q166 17 177 25 Q181 16 185 26 L180 34 Z"/>
+                  <path d="M205 39 Q203 27 213 34 Q219 27 221 38 L215 44 Z"/>
+                </g>
+              </g>
+            </svg>
+            <div class="cake-top"></div>
+            <div class="cake-drips" aria-hidden="true"></div>
+            <div class="cake-pearls" aria-hidden="true"></div>
+            <div class="cake-berries" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="cake-candles" aria-hidden="true">
+              <span class="birthday-candle candle-one"><i class="candle-flame"></i><i class="candle-smoke"></i></span>
+              <span class="birthday-candle candle-two"><i class="candle-flame"></i><i class="candle-smoke"></i></span>
+              <span class="birthday-candle candle-three"><i class="candle-flame"></i><i class="candle-smoke"></i></span>
+              <span class="birthday-candle candle-four"><i class="candle-flame"></i><i class="candle-smoke"></i></span>
+              <span class="birthday-candle candle-five"><i class="candle-flame"></i><i class="candle-smoke"></i></span>
+            </div>
+            <div class="cake-slice" aria-hidden="true"><span></span></div>
+            <div class="cake-knife" aria-hidden="true"><span></span></div>
+          </div>
+          <div class="cake-plate" aria-hidden="true"></div>
+        </div>
+        <span class="cake-stage-spark spark-one" aria-hidden="true">✦</span>
+        <span class="cake-stage-spark spark-two" aria-hidden="true">✧</span>
+        <span class="cake-stage-spark spark-three" aria-hidden="true">✦</span>
+      </div>
+
+      <p class="cake-instruction" id="cakeInstruction" aria-live="polite">Close your eyes and make a birthday wish.</p>
+      <div class="cake-actions">
+        <button class="cake-button" id="blowCandlesButton" type="button" onclick="blowCandles()">Blow the Candles 🕯️</button>
+        <button class="cake-button cake-button-secondary" id="cutCakeButton" type="button" onclick="cutCake()" disabled>Cut the Cake 🎂</button>
+      </div>
+      <p class="cake-footer">A little sweetness, wrapped in a lot of love <span>✦</span></p>
+    </div>
+  </section>
+
   <div id="particles" aria-hidden="true"></div>
 
   <div class="birthday-parade" aria-hidden="true">
@@ -17,7 +110,7 @@
     <span class="parade-party">🎉</span>
   </div>
 
-  <main class="website">
+  <main class="website" inert>
     <section class="screen active" id="welcome">
       <div class="eyebrow"><span>✦</span> A LITTLE SURPRISE FOR SOMEONE SPECIAL <span>✦</span></div>
       <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-heart">♡</div></div>

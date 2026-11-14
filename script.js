@@ -1,3 +1,5 @@
+document.body.classList.add("cake-mode");
+
 // Screen navigation
 function showScreen(screenId) {
   const screens = document.querySelectorAll(".screen");
@@ -10,6 +12,71 @@ function showScreen(screenId) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 
   if (screenId === "final") createCelebration();
+}
+
+function enableWebsiteAfterCake() {
+  document.body.classList.remove("cake-mode");
+  const website = document.querySelector(".website");
+  if (website) website.removeAttribute("inert");
+  showScreen("welcome");
+}
+
+// Let the birthday wish happen before the original website begins
+let candlesBlownOut = false;
+let cakeCuttingStarted = false;
+
+function blowCandles() {
+  if (candlesBlownOut || cakeCuttingStarted) return;
+
+  candlesBlownOut = true;
+  document.getElementById("cakeStage").classList.add("candles-out");
+  document.getElementById("blowCandlesButton").disabled = true;
+  document.getElementById("cutCakeButton").disabled = true;
+  document.getElementById("cakeInstruction").textContent = "Wish made! Your candles are out — now for the cake.";
+  createCakeCelebration();
+
+  window.setTimeout(() => {
+    document.getElementById("cutCakeButton").disabled = false;
+  }, 850);
+}
+
+function cutCake() {
+  if (!candlesBlownOut || cakeCuttingStarted) return;
+
+  cakeCuttingStarted = true;
+  const stage = document.getElementById("cakeStage");
+  const cutButton = document.getElementById("cutCakeButton");
+
+  stage.classList.add("cake-cutting");
+  cutButton.disabled = true;
+  document.getElementById("cakeInstruction").textContent = "A slice of birthday happiness, just for you.";
+
+  window.setTimeout(() => {
+    const intro = document.getElementById("cakeIntro");
+    intro.classList.add("cake-intro-leaving");
+
+    window.setTimeout(() => {
+      intro.hidden = true;
+      enableWebsiteAfterCake();
+      const welcomeButton = document.querySelector("#welcome .main-button");
+      if (welcomeButton) welcomeButton.focus({ preventScroll: true });
+    }, 850);
+  }, 1350);
+}
+
+function createCakeCelebration() {
+  const colors = ["#f6e5b8", "#d9b875", "#fff4d6", "#a94e37"];
+
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("span");
+    piece.className = "cake-confetti";
+    piece.style.left = `${38 + Math.random() * 24}vw`;
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.setProperty("--cake-drift", `${Math.random() * 180 - 90}px`);
+    piece.style.animationDelay = `${Math.random() * 0.25}s`;
+    document.body.appendChild(piece);
+    window.setTimeout(() => piece.remove(), 2200);
+  }
 }
 
 // Quiz: only the chosen sibling answer unlocks the next screen
